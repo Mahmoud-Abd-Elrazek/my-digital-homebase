@@ -52,7 +52,7 @@ const Navbar = ({ transparent = true }: NavbarProps) => {
         <div className="flex items-center justify-between h-16 sm:h-20">
           <a href="#home" className="flex items-center">
             <span className="text-xl font-display font-bold text-foreground">
-              Portfolio
+              m_abrazeg
             </span>
           </a>
           

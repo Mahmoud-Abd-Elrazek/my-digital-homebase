@@ -2,6 +2,7 @@
 import { ArrowDown } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import AnimatedText from './AnimatedText';
+import ProgrammingWallpaper from './ProgrammingWallpaper';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,7 +28,8 @@ const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background to-background/40"></div>
+        <ProgrammingWallpaper />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 to-background/40"></div>
       </div>
       
       <div className="section-container relative z-10 flex flex-col items-center justify-center text-center">

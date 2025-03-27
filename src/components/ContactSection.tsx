@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -66,19 +65,13 @@ const ContactSection = () => {
     { 
       icon: <Mail className="h-5 w-5" />, 
       label: 'Email', 
-      value: 'hello@example.com',
-      href: 'mailto:hello@example.com' 
-    },
-    { 
-      icon: <Phone className="h-5 w-5" />, 
-      label: 'Phone', 
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567' 
+      value: 'mahmoudzanitty@gmailc.om',
+      href: 'mailto:mahmoudzanitty@gmailc.om' 
     },
     { 
       icon: <MapPin className="h-5 w-5" />, 
       label: 'Location', 
-      value: 'San Francisco, CA',
+      value: 'Egypt, Qena',
       href: '#' 
     },
   ];

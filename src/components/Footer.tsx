@@ -7,7 +7,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: <Twitter className="h-5 w-5" />, href: '#', label: 'Twitter' },
     { icon: <Github className="h-5 w-5" />, href: '#', label: 'GitHub' },
-    { icon: <Linkedin className="h-5 w-5" />, href: '#', label: 'LinkedIn' },
+    { icon: <Linkedin className="h-5 w-5" />, href: 'https://www.linkedin.com/in/mahmoud-abderazek-b0786a253/', label: 'LinkedIn' },
     { icon: <Instagram className="h-5 w-5" />, href: '#', label: 'Instagram' },
   ];
   
@@ -17,7 +17,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <a href="#home" className="text-xl font-display font-bold">
-              Portfolio
+              m_abrazeg
             </a>
             <p className="mt-2 text-sm text-muted-foreground">
               Designed and built with attention to detail
