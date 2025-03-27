@@ -29,12 +29,12 @@ const HeroSection = () => {
     <section id="home" className="relative min-h-screen flex items-center justify-center">
       <div className="absolute inset-0 overflow-hidden">
         <ProgrammingWallpaper />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 to-background/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background/40 dark:from-background/95 dark:via-background/75 dark:to-background/50"></div>
       </div>
       
       <div className="section-container relative z-10 flex flex-col items-center justify-center text-center">
         <div className={`transition-all duration-1000 ease-out transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="inline-block py-1 px-3 mb-6 rounded-full bg-accent/10 border border-accent/20">
+          <div className="inline-block py-1 px-3 mb-6 rounded-full bg-accent/10 border border-accent/20 backdrop-blur-sm">
             <span className="text-sm font-medium text-accent">Welcome to my portfolio</span>
           </div>
         </div>
@@ -69,7 +69,7 @@ const HeroSection = () => {
         >
           <button
             onClick={scrollToNext}
-            className="button-effect mt-10 p-3 rounded-full border border-border bg-secondary hover:bg-secondary/80"
+            className="button-effect mt-10 p-3 rounded-full border border-border bg-secondary/80 hover:bg-secondary/90 backdrop-blur-sm"
             aria-label="Scroll down"
           >
             <ArrowDown className="h-5 w-5" />
