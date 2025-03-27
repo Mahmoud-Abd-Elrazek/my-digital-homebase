@@ -57,7 +57,7 @@ const AboutSection = () => {
           >
             <div className="relative z-10 aspect-square rounded-2xl overflow-hidden">
               <BlurImage
-                src="https://www.facebook.com/photo/?fbid=477600985312649&set=a.106859322386819"
+                src="https://scontent.fcai20-1.fna.fbcdn.net/v/t39.30808-6/477087917_552077724531641_8310418652078223006_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=9qa2jT2nEqIQ7kNvgEKXGUA&_nc_oc=Admh-Fl8cVXa_cQlKCrRlB__kt0v8hfWPQIgT8BONC5XNP9l8lUdkDYRT1Ec2XBtsBY&_nc_zt=23&_nc_ht=scontent.fcai20-1.fna&_nc_gid=lKMxklqDgltB6kvuTeQ-8g&oh=00_AYEe4y8qDYXpzcKx2nSRsTnYBFVkYO4lXspZLKbM7zCJBg&oe=67EACB98"
                 alt="Portrait"
                 className="w-full h-full object-cover"
                 containerClassName="w-full h-full"
