@@ -29,7 +29,7 @@ const HeroSection = () => {
   const handleDownloadCV = () => {
     // Create a link to download the CV
     const link = document.createElement('a');
-    link.href = 'https://github.com/Mahmoud-Abd-Elrazek/My-CV/archive/refs/heads/main.zip';
+    link.href = 'https://github.com/Mahmoud-Abd-Elrazek/My-CV/archive/refs/heads/main.pdf';
     link.download = 'Mahmoud_Abderazek_CV.pdf';
     document.body.appendChild(link);
     link.click();

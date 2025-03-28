@@ -81,7 +81,7 @@ const ContactSection = () => {
     <section 
       id="contact" 
       ref={sectionRef}
-      className="py-20 sm:py-32 bg-secondary/50 dark:bg-[#6f6f6f45]"
+      className="py-20 sm:py-32 bg-secondary/50"
     >
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">

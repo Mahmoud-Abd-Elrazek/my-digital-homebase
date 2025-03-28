@@ -5,7 +5,11 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   const socialLinks = [
-    { icon: <Youtube className="h-5 w-5" />, href: 'https://www.youtube.com/@m_abrazeg', label: 'YouTube' },
+    { icon: <Facebook className="h-5 w-5" />, href: 'https://www.facebook.com/profile.php?id=100091882538202', label: 'Facebook' },
+    { icon: <Twitter className="h-5 w-5" />, href: 'https://x.com/MahmoudAbderaz4', label: 'Twitter' },
+    { icon: <Github className="h-5 w-5" />, href: 'https://github.com/Mahmoud-Abd-Elrazek', label: 'GitHub' },
+    { icon: <Linkedin className="h-5 w-5" />, href: 'https://www.linkedin.com/in/mahmoud-abderazek-b0786a253/', label: 'LinkedIn' },
+    { icon: <Instagram className="h-5 w-5" />, href: 'https://www.instagram.com/mahmoud.abdelrazek.5477/', label: 'Instagram' },
   ];
   
   return (
