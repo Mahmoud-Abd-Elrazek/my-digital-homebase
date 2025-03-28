@@ -29,7 +29,7 @@ const HeroSection = () => {
   const handleDownloadCV = () => {
     // Create a link to download the CV
     const link = document.createElement('a');
-    link.href = '/Mahmoud_Abderazek_CV.pdf'; // Update this path to your CV file
+    link.href = 'https://github.com/Mahmoud-Abd-Elrazek/My-CV/archive/refs/heads/main.zip';
     link.download = 'Mahmoud_Abderazek_CV.pdf';
     document.body.appendChild(link);
     link.click();
@@ -55,13 +55,13 @@ const HeroSection = () => {
             className={`text-4xl md:text-5xl lg:text-7xl font-bold leading-tight text-balance transition-all duration-700 ease-out delay-100 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}
           >
             <AnimatedText 
-              text="Creating Meaningful" 
+              text="Mahmoud Abdelrazek" 
               className="inline-block" 
               delay={300}
             />
             <span className="block mt-1">
               <AnimatedText 
-                text="Digital Experiences" 
+                text="Software Engineer" 
                 className="inline-block text-gradient" 
                 delay={500}
               />

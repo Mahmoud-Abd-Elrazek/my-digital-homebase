@@ -90,7 +90,7 @@ const AboutSection = () => {
               {skills.map((skill, index) => (
                 <div 
                   key={skill.name}
-                  className="glass-panel p-6 rounded-xl flex flex-col items-center text-center"
+                  className="glass-panel p-6 rounded-xl flex flex-col items-center text-center bg-[#6f6f6f45]"
                 >
                   <div className="p-3 bg-accent/10 rounded-lg mb-4 text-accent">
                     {skill.icon}

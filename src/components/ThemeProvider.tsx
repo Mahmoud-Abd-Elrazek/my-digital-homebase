@@ -15,17 +15,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     // Check if theme is stored in localStorage
     const savedTheme = localStorage.getItem("theme");
     
-    // Check user preference
+    // Default to dark theme instead of checking user preference
     if (savedTheme) {
       return savedTheme as Theme;
     }
     
-    // Check system preference
-    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    }
-    
-    return "light";
+    return "dark";
   });
 
   useEffect(() => {
