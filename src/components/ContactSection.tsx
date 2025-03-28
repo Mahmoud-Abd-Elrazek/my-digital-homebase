@@ -123,7 +123,7 @@ const ContactSection = () => {
             )}
           >
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="glass-panel p-8 rounded-xl space-y-6">
+              <div className="dark:bg-transparent dark:backdrop-blur-none p-8 rounded-xl space-y-6 glass-panel dark:bg-opacity-0 dark:border-white/10">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
                     Name
