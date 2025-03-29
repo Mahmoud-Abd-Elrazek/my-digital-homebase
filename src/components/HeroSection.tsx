@@ -49,8 +49,7 @@ const HeroSection = () => {
           </div>
         </div>
         
-        {/* Hide the heading with name and job title for now, based on the image */}
-        <div className="hidden">
+        <div className="mb-4">
           <h1 
             className={`text-4xl md:text-5xl lg:text-7xl font-bold leading-tight text-balance transition-all duration-700 ease-out delay-100 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}
           >
