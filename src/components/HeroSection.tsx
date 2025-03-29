@@ -1,3 +1,4 @@
+
 import { ArrowDown, Download } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import AnimatedText from './AnimatedText';
@@ -38,7 +39,7 @@ const HeroSection = () => {
     <section id="home" className="relative min-h-screen flex items-center justify-center">
       <div className="absolute inset-0 overflow-hidden">
         <ProgrammingWallpaper />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 to-background/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 to-background/20"></div>
       </div>
       
       <div className="section-container relative z-10 flex flex-col items-center justify-center text-center">
@@ -48,7 +49,8 @@ const HeroSection = () => {
           </div>
         </div>
         
-        <div className="overflow-hidden mb-4">
+        {/* Hide the heading with name and job title for now, based on the image */}
+        <div className="hidden">
           <h1 
             className={`text-4xl md:text-5xl lg:text-7xl font-bold leading-tight text-balance transition-all duration-700 ease-out delay-100 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}
           >
@@ -68,7 +70,7 @@ const HeroSection = () => {
         </div>
         
         <p 
-          className={`max-w-2xl mx-auto text-lg text-muted-foreground mb-6 transition-all duration-700 ease-out delay-300 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+          className={`max-w-2xl mx-auto text-lg text-foreground mb-12 transition-all duration-700 ease-out delay-300 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           I'm a passionate designer and developer focused on creating intuitive, elegant digital solutions that solve real problems.
         </p>
@@ -91,7 +93,7 @@ const HeroSection = () => {
         >
           <button
             onClick={scrollToNext}
-            className="button-effect mt-10 p-3 rounded-full border border-border bg-secondary hover:bg-secondary/80"
+            className="button-effect mt-16 p-3 rounded-full border border-border/30 bg-secondary/30 hover:bg-secondary/50"
             aria-label="Scroll down"
           >
             <ArrowDown className="h-5 w-5" />
