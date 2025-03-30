@@ -15,7 +15,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     // Check if theme is stored in localStorage
     const savedTheme = localStorage.getItem("theme");
     
-    // Default to dark theme instead of checking user preference
+    // Default to dark theme
     if (savedTheme) {
       return savedTheme as Theme;
     }

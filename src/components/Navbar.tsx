@@ -35,6 +35,7 @@ const Navbar = ({ transparent = true }: NavbarProps) => {
   const links = [
     { name: 'Home', id: 'home' },
     { name: 'About', id: 'about' },
+    { name: 'MY JOURNEY', id: 'experience' },
     { name: 'Projects', id: 'projects' },
     { name: 'Contact', id: 'contact' },
   ];

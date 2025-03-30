@@ -49,25 +49,6 @@ const HeroSection = () => {
           </div>
         </div>
         
-        <div className="mb-4">
-          <h1 
-            className={`text-4xl md:text-5xl lg:text-7xl font-bold leading-tight text-balance transition-all duration-700 ease-out delay-100 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}
-          >
-            <AnimatedText 
-              text="Mahmoud Abdelrazek" 
-              className="inline-block" 
-              delay={300}
-            />
-            <span className="block mt-1">
-              <AnimatedText 
-                text="Software Engineer" 
-                className="inline-block text-gradient" 
-                delay={500}
-              />
-            </span>
-          </h1>
-        </div>
-        
         <p 
           className={`max-w-2xl mx-auto text-lg text-foreground mb-12 transition-all duration-700 ease-out delay-300 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
