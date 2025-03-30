@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Lock } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import { Link } from 'react-router-dom';
 
@@ -70,10 +70,11 @@ const Navbar = ({ transparent = true }: NavbarProps) => {
               </button>
             ))}
             <Link 
-              to="/dashboard" 
-              className="text-sm font-medium px-4 py-2 bg-primary text-primary-foreground rounded-md"
+              to="/login" 
+              className="text-sm font-medium flex items-center gap-1 px-4 py-2 bg-primary text-primary-foreground rounded-md"
             >
-              Dashboard
+              <Lock size={16} />
+              Admin
             </Link>
             <ThemeToggle />
           </div>
@@ -113,10 +114,11 @@ const Navbar = ({ transparent = true }: NavbarProps) => {
             </button>
           ))}
           <Link 
-            to="/dashboard" 
-            className="block w-full text-left px-4 py-3 text-sm font-medium bg-primary text-primary-foreground rounded-md mt-2"
+            to="/login" 
+            className="block w-full text-left px-4 py-3 text-sm font-medium bg-primary text-primary-foreground rounded-md mt-2 flex items-center gap-2"
           >
-            Dashboard
+            <Lock size={16} />
+            Admin
           </Link>
         </div>
       </div>

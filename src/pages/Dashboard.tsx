@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { 
@@ -8,7 +7,8 @@ import {
   ImageIcon, 
   Menu, 
   X,
-  ChevronRight 
+  ChevronRight,
+  LogOut
 } from 'lucide-react';
 import { 
   Tabs, 
@@ -28,7 +28,6 @@ import {
 } from "@/components/ui/table";
 import { useToast } from "@/hooks/use-toast";
 
-// Content interface to define the structure of our content items
 interface ContentItem {
   id: string;
   title: string;
@@ -37,7 +36,6 @@ interface ContentItem {
   type: 'page' | 'post';
 }
 
-// Image interface to define the structure of our image items
 interface ImageItem {
   id: string;
   name: string;
@@ -45,7 +43,6 @@ interface ImageItem {
   uploadedAt: string;
 }
 
-// Settings interface to define the structure of our settings
 interface SiteSettings {
   siteName: string;
   siteDescription: string;
@@ -69,7 +66,6 @@ const Dashboard = () => {
     contactEmail: "contact@example.com"
   });
 
-  // Load stored content from local storage on component mount
   useEffect(() => {
     const storedContent = localStorage.getItem('dashboard_content');
     const storedImages = localStorage.getItem('dashboard_images');
@@ -80,19 +76,16 @@ const Dashboard = () => {
     if (storedSettings) setSettings(JSON.parse(storedSettings));
   }, []);
 
-  // Save any changes to local storage
   useEffect(() => {
     localStorage.setItem('dashboard_content', JSON.stringify(content));
     localStorage.setItem('dashboard_images', JSON.stringify(images));
     localStorage.setItem('dashboard_settings', JSON.stringify(settings));
   }, [content, images, settings]);
 
-  // Toggle sidebar visibility
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
-  // Handle settings form submission
   const handleSettingsSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -111,7 +104,6 @@ const Dashboard = () => {
     });
   };
 
-  // Update a specific content item
   const updateContentItem = (id: string, updatedData: Partial<ContentItem>) => {
     setContent(content.map(item => 
       item.id === id ? { ...item, ...updatedData } : item
@@ -123,7 +115,6 @@ const Dashboard = () => {
     });
   };
 
-  // Create a new content item
   const createContentItem = (type: 'page' | 'post') => {
     const newItem: ContentItem = {
       id: Date.now().toString(),
@@ -141,7 +132,6 @@ const Dashboard = () => {
     });
   };
 
-  // Delete a content item
   const deleteContentItem = (id: string) => {
     setContent(content.filter(item => item.id !== id));
     
@@ -151,7 +141,15 @@ const Dashboard = () => {
     });
   };
 
-  // Dummy data for the overview section
+  const handleLogout = () => {
+    localStorage.removeItem("dashboard_authenticated");
+    toast({
+      title: "Logged out",
+      description: "You have been logged out successfully",
+    });
+    navigate("/");
+  };
+
   const siteStats = [
     { label: "Pages", value: content.filter(item => item.type === 'page').length },
     { label: "Posts", value: content.filter(item => item.type === 'post').length },
@@ -161,7 +159,6 @@ const Dashboard = () => {
 
   return (
     <div className="flex min-h-screen bg-background">
-      {/* Mobile Sidebar Toggle */}
       <button 
         className="fixed top-4 left-4 z-40 md:hidden bg-primary text-primary-foreground rounded-md p-2"
         onClick={toggleSidebar}
@@ -169,7 +166,6 @@ const Dashboard = () => {
         {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
       </button>
       
-      {/* Sidebar */}
       <div 
         className={`fixed inset-y-0 left-0 z-30 w-64 bg-card transform transition-transform duration-300 ease-in-out ${
           sidebarOpen ? 'translate-x-0' : '-translate-x-full'
@@ -217,17 +213,24 @@ const Dashboard = () => {
           </button>
         </nav>
         
-        <div className="p-4 border-t">
+        <div className="p-4 border-t space-y-2">
           <button 
             className="w-full p-2 bg-primary text-primary-foreground rounded-md"
             onClick={() => navigate('/')}
           >
             View Website
           </button>
+          
+          <button 
+            className="w-full p-2 flex items-center justify-center gap-2 bg-destructive text-destructive-foreground rounded-md"
+            onClick={handleLogout}
+          >
+            <LogOut size={16} />
+            Logout
+          </button>
         </div>
       </div>
       
-      {/* Main Content */}
       <div className="flex-1 p-6 md:p-8 overflow-auto">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="mb-8 w-full sm:w-auto">
@@ -237,7 +240,6 @@ const Dashboard = () => {
             <TabsTrigger value="settings">Settings</TabsTrigger>
           </TabsList>
           
-          {/* Overview Tab */}
           <TabsContent value="overview" className="space-y-6">
             <h2 className="text-3xl font-bold">Dashboard Overview</h2>
             
@@ -258,7 +260,6 @@ const Dashboard = () => {
             </div>
           </TabsContent>
           
-          {/* Content Tab */}
           <TabsContent value="content" className="space-y-6">
             <div className="flex items-center justify-between">
               <h2 className="text-3xl font-bold">Content Management</h2>
@@ -326,7 +327,6 @@ const Dashboard = () => {
             </div>
           </TabsContent>
           
-          {/* Media Tab */}
           <TabsContent value="media" className="space-y-6">
             <h2 className="text-3xl font-bold">Media Library</h2>
             
@@ -342,7 +342,6 @@ const Dashboard = () => {
                   className="hidden"
                   id="media-upload"
                   onChange={(e) => {
-                    // In a real app, you'd handle file uploads here
                     toast({
                       title: "Feature is simulated",
                       description: "This demo uses localStorage and can't store actual files.",
@@ -379,7 +378,6 @@ const Dashboard = () => {
             </div>
           </TabsContent>
           
-          {/* Settings Tab */}
           <TabsContent value="settings" className="space-y-6">
             <h2 className="text-3xl font-bold">Website Settings</h2>
             
