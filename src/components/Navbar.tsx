@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
+import { Link } from 'react-router-dom';
 
 interface NavbarProps {
   transparent?: boolean;
@@ -68,6 +69,12 @@ const Navbar = ({ transparent = true }: NavbarProps) => {
                 {link.name}
               </button>
             ))}
+            <Link 
+              to="/dashboard" 
+              className="text-sm font-medium px-4 py-2 bg-primary text-primary-foreground rounded-md"
+            >
+              Dashboard
+            </Link>
             <ThemeToggle />
           </div>
           
@@ -105,6 +112,12 @@ const Navbar = ({ transparent = true }: NavbarProps) => {
               {link.name}
             </button>
           ))}
+          <Link 
+            to="/dashboard" 
+            className="block w-full text-left px-4 py-3 text-sm font-medium bg-primary text-primary-foreground rounded-md mt-2"
+          >
+            Dashboard
+          </Link>
         </div>
       </div>
     </nav>
